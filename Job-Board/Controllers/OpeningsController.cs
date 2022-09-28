@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace JobBoard.Controllers
 {
-  public class JobsController : Controller
+  public class OpeningsController : Controller
   {
     [HttpGet("/jobs")]
     public ActionResult Index()
@@ -12,23 +12,27 @@ namespace JobBoard.Controllers
       List<Opening> allJobs = Opening.GetJobs();
       return View(allJobs);
     }
+    
     [HttpPost("/jobs")]
     public ActionResult Create(string title, string desc, string email, string phone)
     {
       Opening myJob = new Opening(title, desc, email, phone);
       return RedirectToAction("Index");
     }
+
     [HttpGet("/jobs/new")]
     public ActionResult New()
     {
       return View();
     }
+
     [HttpPost("/jobs/delete")]
     public ActionResult DeleteAll()
     {
       Opening.ClearJobs();
-      return View();
+      return RedirectToAction("Index");
     }
+
     [HttpGet("/jobs/{id}")]
     public ActionResult Show(int id)
     {
