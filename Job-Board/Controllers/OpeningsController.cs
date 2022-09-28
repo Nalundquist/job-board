@@ -12,7 +12,7 @@ namespace JobBoard.Controllers
       List<Opening> allJobs = Opening.GetJobs();
       return View(allJobs);
     }
-    
+
     [HttpPost("/jobs")]
     public ActionResult Create(string title, string desc, string email, string phone)
     {
@@ -38,6 +38,14 @@ namespace JobBoard.Controllers
     {
       Opening foundJob = Opening.Find(id);
       return View(foundJob);
+    }
+
+    [HttpPost("/jobs/{id}")]
+    public ActionResult Delete(int id)
+    {
+      List<Opening> jobOpenings = Opening.GetJobs();
+      jobOpenings.RemoveAt(id-1);
+      return RedirectToAction("Index");
     }
   }
 }

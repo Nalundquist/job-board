@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\nalun\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\nalun\\.nuget\\packages"
-    ]
-  }
-}
