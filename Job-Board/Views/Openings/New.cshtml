@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Job Openings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <p>Enter information to Add a new Job Opening</p>
+    <form action="/jobs" method="post">
+      <label for="title">Job Title: </label>
+      <input id="title" name="title" type="text">
+      <label for="desc">Job Description: </label>
+      <input id="desc" name="desc" type="text">
+      <label for="email">Employer Email: </label>
+      <input id="email" name="email" type="text">
+      <label for="phone"> Employer Phone#: </label>
+      <input id="phone" name="phone" type="text">
+      <button type="submit">Add Job</button>
+    </form>
+  </body>
+</html>

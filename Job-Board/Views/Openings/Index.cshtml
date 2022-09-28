@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Job Openings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    @using JobBoard.Models;
+
+    <h1>Job Board</h1>
+    @if (Model.Count == 0)
+    {
+      <p>There are no Jobs currently available, please check back later for new postings.</p>
+    }
+    <ul>
+      @foreach (Opening job in Model)
+      {
+        <li><a href='/jobs/@job.Id'>@job.Title</a></li>
+      }
+    </ul>
+
+    <a href="/jobs/new">Add a new Job.</a>
+
+    <form action="/jobs/delete" method="post">
+      <button type="submit" name="button">Clear All Jobs</button>
+    </form>
+  </body>
+</html>
